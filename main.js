@@ -16,26 +16,17 @@ let correctAnswer = ''
 
 let readJeopardyData = async () => {
     let rawJeopardyData = await fetch('jeopardy.json')
-    // console.log(rawJeopardyData)
     let data = await rawJeopardyData.json()
     let groupDataByEpisode = _.groupBy(data, 'showNumber')
     let showNumbers = Object.keys(groupDataByEpisode)
     let randomNum = Math.floor(Math.random() * showNumbers.length)
     let episodeNum = showNumbers[randomNum]
     let episode = groupDataByEpisode[episodeNum]
-    // console.log(groupDataByEpisode)
-    // console.log(episodeNum)
-    // console.log(episode)
     let episodeRounds = _.groupBy(episode, 'round')
     let jeopardyRoundQuestions = episodeRounds['Jeopardy!']
-    // console.log(jeopardyRoundQuestions)
     let jeopardyRoundCategories = _.groupBy(jeopardyRoundQuestions, 'category')
-    // console.log(jeopardyRoundCategories)
-    // console.log(Object.keys(jeopardyRoundCategories))
     let jeopardyRoundCategoriesList = Object.keys(jeopardyRoundCategories)
-    // console.log(jeopardyRoundCategoriesList)
     for(let category of jeopardyRoundCategoriesList){
-        // console.log(category)
         let header = document.createElement('th')
         header.innerText = category
         tableHeader.appendChild(header)
@@ -125,13 +116,9 @@ let readJeopardyData = async () => {
     }
 
     submitButton.addEventListener('click', () => {
-        // console.log(userAnswer.value)
         if(currentQuestion.length < 1){
-            // console.log('You must pick a question first')
             question.innerText = 'You must select a question first.'
         } else {
-            // console.log(userAnswer.value.toLowerCase())
-            // console.log(correctAnswer)
             if(userAnswer.value.toLowerCase() === correctAnswer){
                 question.innerText = `That is correct! You are awarded $${currentQuestionValue}`
                 userAnswer.value = ''
@@ -139,7 +126,6 @@ let readJeopardyData = async () => {
                 htmlScore.innerText = score
             }
             else{
-                // console.log('Sorry but that is incorrect.')
                 question.innerText = `Sorry, the correct answer is ${correctAnswer}`
                 userAnswer.value = ''
             }
