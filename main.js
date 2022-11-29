@@ -51,7 +51,9 @@ let readJeopardyData = async () => {
         let square1000 = document.createElement('td')
         square200.innerText = '$200'
         square200.addEventListener('click', () =>{
+            console.log(question200.answer)
             currentQuestion = ''
+            clearInput()
             currentQuestion += question200.question
             question.innerText = currentQuestion
             correctAnswer = question200.answer.toLowerCase()
@@ -62,8 +64,9 @@ let readJeopardyData = async () => {
         })
         square400.innerText = '$400'
         square400.addEventListener('click', () =>{
-            // console.log(question400)
+            console.log(question400.answer)
             currentQuestion = ''
+            clearInput()
             currentQuestion += question400.question
             question.innerText = currentQuestion
             correctAnswer = question400.answer.toLowerCase()
@@ -74,8 +77,9 @@ let readJeopardyData = async () => {
         })
         square600.innerText = '$600'
         square600.addEventListener('click', () =>{
-            // console.log(question600)
+            console.log(question600.answer)
             currentQuestion = ''
+            clearInput()
             currentQuestion += question600.question
             question.innerText = currentQuestion
             correctAnswer = question600.answer.toLowerCase()
@@ -86,8 +90,9 @@ let readJeopardyData = async () => {
         })
         square800.innerText = '$800'
         square800.addEventListener('click', () =>{
-            // console.log(question800)
+            console.log(question800.answer)
             currentQuestion = ''
+            clearInput()
             currentQuestion += question800.question
             question.innerText = currentQuestion
             correctAnswer = question800.answer.toLowerCase()
@@ -98,14 +103,15 @@ let readJeopardyData = async () => {
         })
         square1000.innerText = '$1000'
         square1000.addEventListener('click', () =>{
-            // console.log(question1000)
+            console.log(question1000.answer)
             currentQuestion = ''
+            clearInput()
             currentQuestion += question1000.question
             currentQuestionValue = question1000.value
             question.innerText = currentQuestion
             correctAnswer = question1000.answer.toLowerCase()            
             currentQuestionValue = question.innerText === 'This square has already been answered, choose again!' ? 0 : 1000
-            console.log(currentQuestionValue)
+            // console.log(currentQuestionValue)
             square1000.innerText = ''
             question1000.answer = ''
             question1000.question = 'This square has already been answered, choose again!'
@@ -139,6 +145,10 @@ let readJeopardyData = async () => {
             }
         }
     })
+}
+
+function clearInput(){
+    userAnswer.value = ''
 }
 
 readJeopardyData()
