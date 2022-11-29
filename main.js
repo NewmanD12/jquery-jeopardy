@@ -55,7 +55,7 @@ let readJeopardyData = async () => {
             currentQuestion += question200.question
             question.innerText = currentQuestion
             correctAnswer = question200.answer.toLowerCase()
-            currentQuestionValue = 200
+            currentQuestionValue = question.innerText === 'This square has already been answered, choose again!' ? 0 : 200
             square200.innerText = ''
             question200.answer = ''
             question200.question = 'This square has already been answered, choose again!'
@@ -67,7 +67,7 @@ let readJeopardyData = async () => {
             currentQuestion += question400.question
             question.innerText = currentQuestion
             correctAnswer = question400.answer.toLowerCase()
-            currentQuestionValue = 400
+            currentQuestionValue = question.innerText === 'This square has already been answered, choose again!' ? 0 : 400
             square400.innerText = ''
             question400.answer = ''
             question400.question = 'This square has already been answered, choose again!'
@@ -79,7 +79,7 @@ let readJeopardyData = async () => {
             currentQuestion += question600.question
             question.innerText = currentQuestion
             correctAnswer = question600.answer.toLowerCase()
-            currentQuestionValue = 600
+            currentQuestionValue = question.innerText === 'This square has already been answered, choose again!' ? 0 : 600
             square600.innerText = ''
             question600.answer = ''
             question600.question = 'This square has already been answered, choose again!'
@@ -91,7 +91,7 @@ let readJeopardyData = async () => {
             currentQuestion += question800.question
             question.innerText = currentQuestion
             correctAnswer = question800.answer.toLowerCase()
-            currentQuestionValue = 800
+            currentQuestionValue = question.innerText === 'This square has already been answered, choose again!' ? 0 : 800
             square800.innerText = ''
             question800.answer = ''
             question800.question = 'This square has already been answered, choose again!'
@@ -103,8 +103,9 @@ let readJeopardyData = async () => {
             currentQuestion += question1000.question
             currentQuestionValue = question1000.value
             question.innerText = currentQuestion
-            correctAnswer = question1000.answer.toLowerCase()
-            currentQuestionValue = 1000
+            correctAnswer = question1000.answer.toLowerCase()            
+            currentQuestionValue = question.innerText === 'This square has already been answered, choose again!' ? 0 : 1000
+            console.log(currentQuestionValue)
             square1000.innerText = ''
             question1000.answer = ''
             question1000.question = 'This square has already been answered, choose again!'
