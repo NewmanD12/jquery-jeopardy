@@ -51,49 +51,63 @@ let readJeopardyData = async () => {
         let square1000 = document.createElement('td')
         square200.innerText = '$200'
         square200.addEventListener('click', () =>{
-            console.log(question200)
             currentQuestion = ''
             currentQuestion += question200.question
             question.innerText = currentQuestion
             correctAnswer = question200.answer.toLowerCase()
             currentQuestionValue = 200
+            square200.innerText = ''
+            question200.answer = ''
+            question200.question = 'This square has already been answered, choose again!'
         })
         square400.innerText = '$400'
         square400.addEventListener('click', () =>{
-            console.log(question400)
+            // console.log(question400)
             currentQuestion = ''
             currentQuestion += question400.question
             question.innerText = currentQuestion
             correctAnswer = question400.answer.toLowerCase()
             currentQuestionValue = 400
+            square400.innerText = ''
+            question400.answer = ''
+            question400.question = 'This square has already been answered, choose again!'
         })
         square600.innerText = '$600'
         square600.addEventListener('click', () =>{
-            console.log(question600)
+            // console.log(question600)
             currentQuestion = ''
             currentQuestion += question600.question
             question.innerText = currentQuestion
             correctAnswer = question600.answer.toLowerCase()
             currentQuestionValue = 600
+            square600.innerText = ''
+            question600.answer = ''
+            question600.question = 'This square has already been answered, choose again!'
         })
         square800.innerText = '$800'
         square800.addEventListener('click', () =>{
-            console.log(question800)
+            // console.log(question800)
             currentQuestion = ''
             currentQuestion += question800.question
             question.innerText = currentQuestion
             correctAnswer = question800.answer.toLowerCase()
             currentQuestionValue = 800
+            square800.innerText = ''
+            question800.answer = ''
+            question800.question = 'This square has already been answered, choose again!'
         })
         square1000.innerText = '$1000'
         square1000.addEventListener('click', () =>{
-            console.log(question1000)
+            // console.log(question1000)
             currentQuestion = ''
             currentQuestion += question1000.question
             currentQuestionValue = question1000.value
             question.innerText = currentQuestion
             correctAnswer = question1000.answer.toLowerCase()
             currentQuestionValue = 1000
+            square1000.innerText = ''
+            question1000.answer = ''
+            question1000.question = 'This square has already been answered, choose again!'
         })
         row200.appendChild(square200)
         row400.appendChild(square400)
