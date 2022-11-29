@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div id="welcome">
+        <h1>This is Jeopardy!</h1>
+        <h3>Current Score: <span id="score">0</span></h3>
+    </div>
+    <table>
+        <tr id="headers-row"></tr>
+        <tr id="row-200">
+        </tr>
+        <tr id="row-400">
+        </tr>
+        <tr id="row-600">
+        </tr>
+        <tr id="row-800">
+        </tr>
+        <tr id="row-1000">
+        </tr>
+    </table>
+    <div id="question-section">
+        <p id="question"></p>
+        <hr>
+        <label for="answer">Your Answer: </label>
+        <input type="text" name="answer" id="answer">
+        <br>
+        <button id="submitAnswer">Submit</button>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
